@@ -1,0 +1,39 @@
+:root {
+    --gray: hsl(240, 2%, 57%);
+    --gray2: hsl(240, 3%, 69%);
+    --gray3: hsl(240, 5%, 79%);
+    --gray4: hsl(240, 6%, 83%);
+    --gray5: hsl(240, 11%, 91%);
+    --gray6: hsl(240, 24%, 96%);
+
+    --red: hsl(3, 100%, 59%);
+    --orange: hsl(12, 100%, 50%);
+    --yellow: hsl(48, 100%, 50%);
+    --green: hsl(135, 59%, 49%);
+    --mint: hsl(177, 100%, 39%);
+    --teal: hsl(189, 61%, 48%);
+    --cyan: hsl(199, 78%, 55%);
+    --blue: hsl(211, 100%, 50%);
+    --indigo: hsl(241, 61%, 59%);
+    --purple: hsl(280, 68%, 60%);
+    --pink: hsl(349, 100%, 59%);
+    --brown: hsl(34, 27%, 50%);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+* :before,
+:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100svh;
+}
