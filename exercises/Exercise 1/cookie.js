@@ -1,16 +1,14 @@
 "use strict";
 
-import { apiKey, apiHost, love_and_relationships, category_list } from "./apiInfo.js";
+// import { apiKey, apiHost, love_and_relationships, category_list } from "./apiInfo.js";
 
 async function fetchCookie() {
-    const url = process.env.FORTUNE_COOKIE_API_URL;
-    const apiKey = process.env.FORTUNE_COOKIE_API_KEY;
-    console.log(apiKey);
+    const url = "https://fortune-cookie2.p.rapidapi.com/fortune/by_category?category_key=love_and_relationships";
     const options = {
         method: "GET",
         headers: {
-            "X-RapidAPI-Key": process.env.FORTUNE_COOKIE_API_KEY,
-            "X-RapidAPI-Host": process.env.FORTUNE_COOKIE_API_HOST
+            "X-RapidAPI-Key": "05f800f464mshbce55dd916f91e2p184dafjsn1e0e1d9886cd",
+            "X-RapidAPI-Host": "fortune-cookie2.p.rapidapi.com"
         }
     };
 
@@ -27,12 +25,12 @@ async function fetchCookie() {
 }
 
 async function printList() {
-    const url = x;
+    const url = "https://fortune-cookie2.p.rapidapi.com/fortune/category_list";
     const options = {
         method: "GET",
         headers: {
-            "X-RapidAPI-Key": x,
-            "X-RapidAPI-Host": x
+            "X-RapidAPI-Key": "05f800f464mshbce55dd916f91e2p184dafjsn1e0e1d9886cd",
+            "X-RapidAPI-Host": "fortune-cookie2.p.rapidapi.com"
         }
     };
 
