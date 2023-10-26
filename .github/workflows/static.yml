@@ -21,6 +21,9 @@ concurrency:
     group: "pages"
     cancel-in-progress: false
 
+env:
+    API_KEY: ${{ secrets.FORTUNE_COOKIE_API_KEY }}
+
 jobs:
     # Single deploy job since we're just deploying
     deploy:
@@ -30,7 +33,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Tell me a Secret
-              run: echo "Here's my secret - ${{ secrets.FORTUNE_COOKIE_API_KEY }}"
+              run: echo "Here's my secret - $API_KEY"
             - name: Checkout
               uses: actions/checkout@v3
             - name: Setup Pages
