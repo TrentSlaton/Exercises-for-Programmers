@@ -40,4 +40,8 @@ jobs:
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
+        env:
+          FORTUNE_COOKIE_API_KEY: ${{ secrets.FORTUNE_COOKIE_API_KEY }}
+          FORTUNE_COOKIE_API_HOST: ${{ secrets.FORTUNE_COOKIE_API_HOST }}
+          FORTUNE_COOKIE_API_URL: ${{ secrets.FORTUNE_COOKIE_API_URL }}
         uses: actions/deploy-pages@v2
