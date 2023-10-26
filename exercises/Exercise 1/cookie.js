@@ -8,7 +8,9 @@ async function fetchCookie() {
         method: "GET",
         headers: {
             "X-RapidAPI-Key": "05f800f464mshbce55dd916f91e2p184dafjsn1e0e1d9886cd",
+            // "X-RapidAPI-Key": "x",
             "X-RapidAPI-Host": "fortune-cookie2.p.rapidapi.com"
+            // "X-RapidAPI-Host": "x"
         }
     };
 
@@ -29,8 +31,10 @@ async function printList() {
     const options = {
         method: "GET",
         headers: {
-            "X-RapidAPI-Key": "05f800f464mshbce55dd916f91e2p184dafjsn1e0e1d9886cd",
-            "X-RapidAPI-Host": "fortune-cookie2.p.rapidapi.com"
+            "X-RapidAPI-Key": "x",
+            // "X-RapidAPI-Key": "05f800f464mshbce55dd916f91e2p184dafjsn1e0e1d9886cd",
+            // "X-RapidAPI-Host": "fortune-cookie2.p.rapidapi.com"
+            "X-RapidAPI-Host": "x"
         }
     };
 

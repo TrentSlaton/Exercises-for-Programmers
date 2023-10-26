@@ -4,7 +4,8 @@ import { fetchCookie } from "./cookie.js";
 
 // Cache DOM elements.
 const nameInput = document.getElementById("name");
-const helloName = document.getElementById("hello_name");
+const helloName = document.querySelector("#hello_name > p.greet");
+const fortune = document.querySelector("#hello_name > p.fortune");
 const submit = document.getElementById("submit");
 const modal = document.getElementById("modal");
 const closeModalButton = document.getElementById("close-modal");
@@ -33,9 +34,11 @@ async function displayMessage() {
         try {
             const cookie = await fetchCookie();
             if (!cookie.error) {
-                helloName.innerHTML = `Hello, ${nameInput.value}!<br>${cookie.answer}`;
+                helloName.innerHTML = `Hello, ${nameInput.value}!`;
+                fortune.innerHTML = `${cookie.answer}`;
             } else {
-                helloName.innerHTML = `Hello, ${nameInput.value}!<br>We ran out of fortune cookies :(`;
+                helloName.innerHTML = `Aw shucks, ${nameInput.value}...`;
+                fortune.innerHTML = `We ran out of fortune cookies :(`;
             }
             modal.style.display = "block";
         } catch (error) {

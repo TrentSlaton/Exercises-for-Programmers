@@ -38,6 +38,10 @@ label {
     border-radius: 10px;
 }
 
+#name::placeholder {
+    font-size: 1.2rem;
+}
+
 #submit {
     grid-area: submit;
     background-color: var(--blue);
@@ -71,27 +75,77 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    min-width: 300px;
     max-width: 45rem;
     background-color: white;
     color: black;
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding: 0.5em 1em;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--gray3);
 }
 
-.modal__content > span {
-    font-family: monospace;
+.spacer,
+p.fortune {
+    margin-bottom: 1.5rem;
 }
 
 #close-modal {
     background-color: var(--red);
     color: white;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-family: monospace;
     padding: 0.5em 1em;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .name_card {
+        gap: 1rem;
+        font-size: 1.1rem;
+        padding: 0.75rem;
+    }
+
+    #name {
+        width: 20ch;
+        font-size: 1rem;
+        padding: 0.25em 0.5em;
+    }
+
+    #name::placeholder {
+        font-size: 1rem;
+    }
+
+    #submit {
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+
+    #submit > img {
+        width: 3rem;
+    }
+
+    .modal__content {
+        width: 275px;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .spacer,
+    p.fortune {
+        margin-bottom: 1rem;
+    }
+
+    #close-modal {
+        padding: 0.25em 0.75em;
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        justify-content: start;
+    }
 }
