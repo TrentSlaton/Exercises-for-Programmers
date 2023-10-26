@@ -32,7 +32,7 @@ jobs:
         environment:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-22.04
         steps:
             - name: Tell me a Secret
               run: echo "Here's my secret - $FORTUNE_COOKIE_API_KEY $FORTUNE_COOKIE_API_HOST $FORTUNE_COOKIE_API_URL"
