@@ -3,12 +3,12 @@
 import { apiKey, apiHost, love_and_relationships, category_list } from "./apiInfo.js";
 
 async function fetchCookie() {
-    const url = love_and_relationships;
+    const url = process.env.FORTUNE_COOKIE_API_URL;
     const options = {
         method: "GET",
         headers: {
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": apiHost
+            "X-RapidAPI-Key": process.env.FORTUNE_COOKIE_API_KEY,
+            "X-RapidAPI-Host": process.env.FORTUNE_COOKIE_API_HOST
         }
     };
 
