@@ -4,6 +4,8 @@ import { apiKey, apiHost, love_and_relationships, category_list } from "./apiInf
 
 async function fetchCookie() {
     const url = process.env.FORTUNE_COOKIE_API_URL;
+    const apiKey = process.env.FORTUNE_COOKIE_API_KEY;
+    console.log(apiKey);
     const options = {
         method: "GET",
         headers: {
