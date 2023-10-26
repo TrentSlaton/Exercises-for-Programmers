@@ -3,6 +3,12 @@ body {
     place-content: center;
 }
 
+.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .name_card {
     display: grid;
     grid-template-areas:
@@ -29,19 +35,24 @@ label {
     font-family: monospace;
     padding: 0.5em 1em;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #submit {
     grid-area: submit;
     background-color: var(--blue);
-    color: white;
     font-size: 1rem;
-    font-family: monospace;
-    padding: 0.5em 1em;
+    padding: 0.3rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+#submit > img {
+    display: block;
+    width: 5rem;
+    height: auto;
+    border-radius: 10px;
 }
 
 #modal {
@@ -60,6 +71,7 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-width: 45rem;
     background-color: white;
     color: black;
     font-size: 2rem;

@@ -10,15 +10,15 @@ const modal = document.getElementById("modal");
 const closeModalButton = document.getElementById("close-modal");
 
 // Add Event Listeners to DOM elements.
-document.addEventListener("keyup", function (event) {
-    if (event.key === "Escape") {
-        closeModal();
-    }
-});
-
 nameInput.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         displayMessage();
+    }
+});
+
+document.addEventListener("keyup", function (event) {
+    if (event.key === "Escape") {
+        closeModal();
     }
 });
 
@@ -32,10 +32,10 @@ async function displayMessage() {
     if (inputText !== "") {
         try {
             const cookie = await fetchCookie();
-            if (cookie !== null) {
-                helloName.textContent = `Hello, ${nameInput.value}! ${cookie.answer}`;
+            if (!cookie.error) {
+                helloName.innerHTML = `Hello, ${nameInput.value}!<br>${cookie.answer}`;
             } else {
-                helloName.textContent = `Hello, ${nameInput.value}! (No cookie available)`;
+                helloName.innerHTML = `Hello, ${nameInput.value}!<br>We ran out of fortune cookies :(`;
             }
             modal.style.display = "block";
         } catch (error) {
@@ -50,8 +50,3 @@ function closeModal() {
     nameInput.value = "";
     modal.style.display = "none";
 }
-
-// Load the cat fact when the page loads
-// loadCatFact();
-
-// const cookie = fetchCookie();

@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="custom.css">
-    <!-- <script type="module" src="catFact.js"></script> -->
     <script type="module" src="cookie.js"></script>
     <script defer type="module" src="script.js"></script>
     <title>Exercises for Programmers - Exercise 1</title>
 </head>
 
 <body>
+    <a class="home" href="/index.html">Home</a>
     <div class="name_card">
-        <label for="name">What is your name?</label>
+        <label for="name">Would you like a fortune cookie?</label>
         <input required id="name" type="text" placeholder="Enter your name">
-        <button id="submit">Submit</button>
+        <button id="submit"><img src="kawaii-fortune-cookie.jpg" alt="Cute Fortune Cookie"></button>
     </div>
     <div id="modal">
         <div class="modal__content">
-            <span id="hello_name"></span>
+            <div id="hello_name">
+            </div>
             <button id="close-modal">Close</button>
         </div>
     </div>
