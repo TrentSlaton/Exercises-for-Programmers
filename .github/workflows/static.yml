@@ -29,6 +29,8 @@ jobs:
             url: ${{ steps.deployment.outputs.page_url }}
         runs-on: ubuntu-latest
         steps:
+            - name: Tell me a Secret
+              run: echo "Here's my secret - ${{ secrets.FORTUNE_COOKIE_API_KEY }}"
             - name: Checkout
               uses: actions/checkout@v3
             - name: Setup Pages
@@ -40,9 +42,4 @@ jobs:
                   path: "."
             - name: Deploy to GitHub Pages
               id: deployment
-              env:
-                  FORTUNE_COOKIE_API_KEY: ${{ secrets.FORTUNE_COOKIE_API_KEY }}
-                  FORTUNE_COOKIE_API_HOST: ${{ secrets.FORTUNE_COOKIE_API_HOST }}
-                  FORTUNE_COOKIE_API_URL: ${{ secrets.FORTUNE_COOKIE_API_URL }}
-
               uses: actions/deploy-pages@v2
