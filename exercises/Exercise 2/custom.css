@@ -1,0 +1,11 @@
+textarea {
+    resize: none;
+}
+
+#output {
+    display: none;
+}
+
+#count {
+    display: none;
+}
