@@ -3,9 +3,8 @@
 const charMap = new Map();
 const input = document.getElementById("input");
 const output = document.getElementById("output");
-// const count = document.getElementById("count");
 const clear = document.getElementById("clear");
-const ctx = document.getElementById("myChart");
+const chartContext = document.getElementById("chart");
 
 let myChart;
 
@@ -26,14 +25,15 @@ function processText(event) {
 
 function clearUI() {
     output.innerHTML = "";
-    // count.innerHTML = "";
     input.value = "";
     myChart.destroy();
 }
 
 function processInput() {
-    for (let i = 0; i < input.value.length; i++) {
-        let char = input.value[i];
+    const inputText = Array.from(input.value);
+    for (let i = 0; i < inputText.length; i++) {
+        let char = inputText[i];
+        // let char = input.value[i];
 
         if (char == " ") {
             char = "space";
@@ -59,25 +59,16 @@ function updateUI() {
     }
 
     let sortedEntries = Array.from(charMap).sort((a, b) => a[0].localeCompare(b[0]));
-    console.log(sortedEntries);
     const labels = sortedEntries.map((entry) => entry[0]);
     const data = sortedEntries.map((entry) => entry[1]);
-    console.log("labels", labels);
-    console.log("data", data);
-    // count.innerHTML = "";
-    // for (let [key, value] of sortedEntries) {
-    //     count.innerHTML += `${key}: ${value}<br>`;
-    // }
 
     output.style.display = "block";
-    // count.style.display = "block";
 
     if (myChart) {
-        console.log("hey");
         myChart.destroy();
     }
 
-    myChart = new Chart(ctx, {
+    myChart = new Chart(chartContext, {
         type: "bar",
         data: {
             labels: labels,
