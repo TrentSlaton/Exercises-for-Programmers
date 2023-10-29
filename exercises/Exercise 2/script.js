@@ -3,11 +3,14 @@
 const charMap = new Map();
 const input = document.getElementById("input");
 const output = document.getElementById("output");
-const count = document.getElementById("count");
+// const count = document.getElementById("count");
 const clear = document.getElementById("clear");
+const ctx = document.getElementById("myChart");
+
+let myChart;
 
 input.addEventListener("input", processText);
-clear.addEventListener("click", clearAll);
+clear.addEventListener("click", clearUI);
 
 function processText(event) {
     charMap.clear();
@@ -23,7 +26,9 @@ function processText(event) {
 
 function clearUI() {
     output.innerHTML = "";
-    count.innerHTML = "";
+    // count.innerHTML = "";
+    input.value = "";
+    myChart.destroy();
 }
 
 function processInput() {
@@ -54,13 +59,44 @@ function updateUI() {
     }
 
     let sortedEntries = Array.from(charMap).sort((a, b) => a[0].localeCompare(b[0]));
-    count.innerHTML = "";
-    for (let [key, value] of sortedEntries) {
-        count.innerHTML += `${key}: ${value}<br>`;
-    }
+    console.log(sortedEntries);
+    const labels = sortedEntries.map((entry) => entry[0]);
+    const data = sortedEntries.map((entry) => entry[1]);
+    console.log("labels", labels);
+    console.log("data", data);
+    // count.innerHTML = "";
+    // for (let [key, value] of sortedEntries) {
+    //     count.innerHTML += `${key}: ${value}<br>`;
+    // }
 
     output.style.display = "block";
-    count.style.display = "block";
+    // count.style.display = "block";
+
+    if (myChart) {
+        console.log("hey");
+        myChart.destroy();
+    }
+
+    myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: "letters",
+                    data: data,
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 }
 
 function clearAll() {
