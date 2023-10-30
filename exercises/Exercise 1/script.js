@@ -41,6 +41,7 @@ async function displayMessage() {
                 fortune.innerHTML = `We ran out of fortune cookies :(`;
             }
             modal.style.display = "block";
+            closeModalButton.focus();
         } catch (error) {
             console.log(error);
         }
@@ -52,4 +53,5 @@ async function displayMessage() {
 function closeModal() {
     nameInput.value = "";
     modal.style.display = "none";
+    nameInput.focus();
 }
