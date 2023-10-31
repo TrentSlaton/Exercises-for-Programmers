@@ -29,6 +29,11 @@ function submitInput() {
         return;
     }
 
+    /*
+        TODO
+            strip leading and trailing quotation marks if any
+            trim string
+    */
     sourceQuote.innerHTML = source.value + " says, ";
     blockQuote.innerHTML = '"' + quote.value + '"';
     source.value = "";
