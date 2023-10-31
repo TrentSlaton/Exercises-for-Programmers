@@ -12,7 +12,23 @@
 
 <body>
     <a class="home" href="../../index.html">Home</a>
-    <h1>Exercise 3</h1>
+    <div class="content">
+        <div class="container">
+            <form action="javascript:void(0)">
+                <label for="quote">What is the quote?</label>
+                <textarea name="quote" id="quote" cols="90" rows="15"></textarea>
+                <label for="source">Who said it?</label>
+                <input id="source" type="text">
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+        <div class="result">
+            <p id="source-quote">
+            <blockquote></blockquote>
+            </p>
+            <button id="cool">cool...</button>
+        </div>
+    </div>
 </body>
 
 </html>

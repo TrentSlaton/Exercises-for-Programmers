@@ -1,0 +1,32 @@
+body {
+    display: grid;
+    place-items: center;
+}
+
+.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Add a transition for the transform property */
+    transform: translateY(0); /* Initial translation set to 0 */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.result {
+    display: none;
+    /* opacity: 0; */
+    /* transition: opacity 1s ease; */
+}
+
+.content.show-result {
+    transform: translateY(-100%);
+}
