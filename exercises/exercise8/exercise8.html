@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Pizza Slice Allocator</title>
+</head>
+<!-- TODO: style. accessibilty, keyboard driven, reset, refactor js, error and edge case handling , testing-->
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <form action="javascript:void(0);">
+        <label for="people">People</label>
+        <input type="number" min="0" id="people" required>
+        <br>
+        <label for="pizzas">Pizzas</label>
+        <input type="number" min="0" id="pizzas" required>
+        <br>
+        <label for="slices">Slices per Pizza</label>
+        <input type="number" min="0" id="slices" required>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+    <p id="distribution"></p>
+</body>
+
+</html>
