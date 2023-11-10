@@ -35,5 +35,11 @@
 }
 
 body {
-    min-height: 100svh;
+    min-height: 100vh;
+}
+
+@supports (min-height: 100svh) {
+    body {
+        min-height: 100svh;
+    }
 }
