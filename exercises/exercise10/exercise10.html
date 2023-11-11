@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Check Yourself (before wrecking your self)</title>
+</head>
+<!-- TODO: style. accessibilty, keyboard driven, reset, refactor js, error and edge case handling , testing, input validation (cannot enter too many decimal points, NaN), make it dynamic (handle n items) -->
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <form action="javascript:void(0);">
+        <label for="item1-qty">Item 1 Quantity</label>
+        <input type="number" name="item1-qty" min="0" id="item1-qty" required>
+        <label for="item1-price">Item 1 Price</label>
+        <input type="number" name="item1-price" min="0" step="0.01" id="item1-price" required>
+        <br>
+        <label for="item2-qty">Item 2 Quantity</label>
+        <input type="number" name="item2-qty" min="0" id="item2-qty" required>
+        <label for="item2-price">Item 2 Price</label>
+        <input type="number" name="item2-price" min="0" step="0.01" id="item2-price" required>
+        <br>
+        <label for="item3-qty">Item 3 Quantity</label>
+        <input type="number" name="item3-qty" min="0" id="item3-qty" required>
+        <label for="item3-price">Item 3 Price</label>
+        <input type="number" name="item3-price" min="0" step="0.01" id="item3-price" required>
+        <button type="submit">submit</button>
+    </form>
+    <p id="receipt"></p>
+</body>
+
+</html>
