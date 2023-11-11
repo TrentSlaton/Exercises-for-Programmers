@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Compound Interest</title>
+</head>
+<!-- TODO: style. accessibilty, keyboard driven, reset, refactor js, error and edge case handling , testing, input validation (cannot enter too many decimal points, NaN), accept rate as a percent (15% vs 0.15) -->
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <form action="javascript:void(0);">
+        <label for="principal">Principal</label>
+        <input type="number" name="principal" min="0" step="0.01" id="principal" required>
+        <br>
+        <label for="rate">Interest Rate</label>
+        <input type="number" name="rate" min="0" step="0.01" id="rate" required>
+        <br>
+        <label for="term">Term</label>
+        <input type="number" name="term" min="0" step="1" id="term" required>
+        <br>
+        <label for="period">Period</label>
+        <input type="number" name="period" min="0" step="1" id="period" required>
+        <button type="submit">submit</button>
+    </form>
+    <p id="balance"></p>
+</body>
+
+</html>
