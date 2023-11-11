@@ -32,4 +32,8 @@ button.addEventListener("click", () => {
     Total: ${total}`;
 
     receipt.style.display = "block";
+
+    const number = 5.123;
+    const roundedUpNumber = Math.ceil(number * 100) / 100;
+    console.log(roundedUpNumber); // 5.13
 });

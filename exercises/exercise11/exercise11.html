@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Currency Conversion</title>
+</head>
+<!-- TODO: style. accessibilty, keyboard driven, reset, refactor js, error and edge case handling , testing, input validation (cannot enter too many decimal points, NaN), dropdown list of countries (requires locally storing echange rates), currency exchange rate API -->
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <form action="javascript:void(0);">
+        <label for="euros">Euros</label>
+        <input type="number" min="0" step="0.01" id="euros" required>
+        <br>
+        <label for="xrate">Exchange Rate</label>
+        <input type="number" min="0" step="0.0001" id="xrate" required>
+        <button type="submit">submit</button>
+    </form>
+    <p id="converted"></p>
+</body>
+
+</html>
