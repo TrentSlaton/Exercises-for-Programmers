@@ -35,7 +35,7 @@ async function displayMessage() {
             const cookie = await fetchCookie();
             if (!cookie.error) {
                 helloName.innerHTML = `Hello, ${nameInput.value}!`;
-                fortune.innerHTML = `${cookie.answer}`;
+                fortune.innerHTML = `${cookie.data.message}`;
             } else {
                 helloName.innerHTML = `Aw shucks, ${nameInput.value}...`;
                 fortune.innerHTML = `We ran out of fortune cookies :(`;
