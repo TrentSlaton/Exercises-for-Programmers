@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Blood Alcohol Calculator</title>
+</head>
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <br>
+
+    <h2>Are you sober enough to drive?</h2>
+
+    <label for="weight">Weight in pounds</label>
+    <br>
+    <input id="weight" name="weight" placeholder="150" type="number" min="0">
+    <br>
+
+    <label for="gender">Gender</label>
+    <br>
+    <select name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br>
+
+    <label for="drinks">Number of drinks</label>
+    <br>
+    <input id="drinks" placeholder="2" type="number" min="0">
+    <br>
+
+    <label for="abv">Alcohol by volume for each drink</label>
+    <br>
+    <input id="abv" placeholder="0.5" type="number" min="0" max="100" step="0.1">
+    <br>
+
+    <label for="lastdrink">Time since last drink</label>
+    <br>
+    <input id="lastdrink" placeholder="1" type="number" min="0">
+    <br>
+
+    <button id="check">Check!</button>
+
+    <p id="message"></p>
+
+</body>
+
+</html>
