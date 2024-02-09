@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Tax Calculator</title>
+</head>
+<!-- TODO: style. accessibilty, keyboard driven, reset, refactor js, error and edge case handling , testing, input validation (cannot enter too many decimal points, NaN), accept rate as a percent (15% vs 0.15) -->
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+
+    <form action="javascript:void(0)">
+        <label for="order-amount">Order Amount</label>
+        <br>
+        <input id="order-amount" name="order-amount" placeholder="12.99" type="text">
+        <br>
+
+        <label for="state">State or State Code</label>
+        <br>
+        <input id="state" name="state" placeholder="FL" type="text">
+        <br>
+
+        <label for="subtotal">Subtotal</label>
+        <br>
+        <p id="subtotal">$0.00</p>
+
+        <label for="tax">Tax</label>
+        <br>
+        <p id="tax">$0.00</p>
+
+        <label for="total">Total</label>
+        <br>
+        <p id="total">$0.00</p>
+    </form>
+
+</body>
+
+</html>
