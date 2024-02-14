@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Multistate Sales Tax Calculator</title>
+</head>
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <br>
+
+    <h2>State/County Tax Calculator</h2>
+
+    <label for="order">Order Amount</label>
+    <br>
+    <input id="order" name="order" placeholder="10.99" step="0.01" min="0" type="number">
+    <br>
+
+    <label for="state">State Code</label>
+    <br>
+    <input id="state" name="state" placeholder="FL" type="text">
+    <br>
+
+    <div style="display: none" id="county-wrapper">
+        <label for="county">County</label>
+        <br>
+        <input id="county" name="county" placeholder="Orange" type="text">
+        <br>
+    </div>
+
+    <button id="calculate">Tax me!</button>
+
+    <p id="tax"></p>
+    <p id="total"></p>
+
+</body>
+
+</html>
