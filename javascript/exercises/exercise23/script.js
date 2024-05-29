@@ -1,18 +1,9 @@
 "use strict";
 
-/*
-
-So I haven't gotten this working yet, but the idea is to implement some functional programming here... I want to initialize the the DOM elements to the initial question and then have event listeners on the yes/no buttons that will call the update DOM function, which will take in the old DOM and return the updated DOM...
-
-Both the "yes" and "no" buttons will call the same function, but with "yes" and "no" parameters respectively. That function will perform a switch or if statement on the last element of the ul and see if it includes the various phrases ("Does the car make a clicking noise?" or "Does your car have fuel injection?") and based on the response of "yes" or "no", it will update the DOM accordingly.
-
-Updating the DOM will be done by taking in the old DOM, making a copy of it, and appending the new question to the copy and returning that.
-
-*/
-
 // get UI elements
+const body = document.body;
 const qna = document.getElementById("qna");
-const qnaList = (() => {
+let qnaList = (() => {
     const qnaList = [];
     const elements = [...document.getElementById("qna").getElementsByTagName("li")];
 
@@ -25,27 +16,84 @@ const qnaList = (() => {
 const yes = document.getElementById("yes");
 const no = document.getElementById("no");
 
+// prompts
+const carSilent = "Is the car silent when you turn the key?";
+const batteryTerminals = "Are the battery terminals corroded?";
+const clickingNoise = "Does the car make a clicking noise?";
+const crankNoStart = "Does the car crank up but fail to start?";
+const startThenDie = "Does the engine start and then die?";
+const haveFuelInjection = "Does your car have fuel injection?";
+
 // update qnaList
 const updateqnaList = (oldqnaList, response) => {
-    //
-    let newItem;
-    const qnaList = [...oldqnaList];
-    if (oldqnaList[oldqnaList.length - 1].includes("Is the car silent when you turn the key?")) {
-        newItem = "";
+    const lastItem = oldqnaList[oldqnaList.length - 1];
+    let newItem = "";
+
+    if (lastItem.includes(carSilent)) {
+        if (response === "yes") {
+            newItem = batteryTerminals;
+        } else {
+            newItem = clickingNoise;
+        }
+    } else if (lastItem.includes(batteryTerminals)) {
+        if (response === "yes") {
+            newItem = "Clean the terminals and try starting again.";
+            removeYesNoButtons();
+        } else {
+            newItem = "Replace cables and try again.";
+            removeYesNoButtons();
+        }
+    } else if (lastItem.includes(clickingNoise)) {
+        if (response === "yes") {
+            newItem = "Replace the battery.";
+            removeYesNoButtons();
+        } else {
+            newItem = crankNoStart;
+        }
+    } else if (lastItem.includes(crankNoStart)) {
+        if (response === "yes") {
+            newItem = "Check spark plug connections.";
+            removeYesNoButtons();
+        } else {
+            newItem = startThenDie;
+            no.remove();
+        }
+    } else if (lastItem.includes(startThenDie)) {
+        if (response === "yes") {
+            newItem = haveFuelInjection;
+            body.appendChild(no);
+        }
+    } else if (lastItem.includes(haveFuelInjection)) {
+        if (response === "yes") {
+            newItem = "Get it in for service.";
+            removeYesNoButtons();
+        } else {
+            newItem = "Check to ensure the choke is opening and closing.";
+            removeYesNoButtons();
+        }
     }
+
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+
+    p.textContent = newItem;
+    li.appendChild(p);
+    qna.appendChild(li);
 
     return [...oldqnaList, newItem];
 };
 
+// remove yes/no buttons
+const removeYesNoButtons = () => {
+    yes.remove();
+    no.remove();
+};
+
 // add event listeners and update UI elements
 yes.addEventListener("click", () => {
-    //
-    // console.log(qnaList[qnaList.length - 1].innerHTML);
-    // qnaList = updateqnaList(qnaList, "yes");
-    updateqnaList(qnaList, "yes");
+    qnaList = updateqnaList(qnaList, "yes");
 });
 
 no.addEventListener("click", () => {
-    //
-    updateqnaList(qnaList, "yes");
+    qnaList = updateqnaList(qnaList, "no");
 });
