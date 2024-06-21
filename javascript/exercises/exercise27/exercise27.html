@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="./custom.css">
+    <script defer src="./script.js"></script>
+    <title>Validating Inputs</title>
+</head>
+
+<body>
+    <a class="home" href="../../index.html">Home</a>
+    <br>
+
+    <h1>Please enter your employee information.</h1>
+    <form action="" id="employee-form">
+        <h2>First Name</h2>
+        <input id="first-name" type="text" minlength="2" placeholder="First Name" required>
+        <br>
+        <h2>Last Name</h2>
+        <input id="last-name" type="text" minlength="2" placeholder="Last Name" required>
+        <br>
+        <h2>Zip Code</h2>
+        <input id="zip-code" type="text" pattern="\d{5}" placeholder="90210" required>
+        <br>
+        <h2>Employee ID</h2>
+        <input id="employee-id-prefix" type="text" minlength="2" maxlength="2" placeholder="AA" required>
+        <span>-</span>
+        <input id="employee-id-suffix" type="text" pattern="\d{4}" placeholder="1234" required>
+        <br>
+        <button type="submit" id="submit">Submit</button>
+        <br>
+    </form>
+    <p id="result"></p>
+
+</body>
+
+</html>
