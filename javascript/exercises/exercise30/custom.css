@@ -1,0 +1,11 @@
+#table {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    /* gap: 5px; */
+}
+
+.cell {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
