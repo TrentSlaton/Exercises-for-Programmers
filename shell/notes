@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+
+# for 04
+# Function to prompt for input and ensure it is not empty
+prompt_for_input() {
+  local prompt="$1"
+    local varname="$2"
+      local value=""
+
+        while [ -z "$value" ]; do
+            clear
+                echo "Mad Libs!"
+                    echo ""
+                        [ -n "$noun" ] && echo "noun: $noun"
+                            [ -n "$verb" ] && echo "verb: $verb"
+                                [ -n "$adjective" ] && echo "adjective: $adjective"
+                                    [ -n "$adverb" ] && echo "adverb: $adverb"
+                                        printf "%s" "$prompt"
+                                            read -r value
+                                                [ -z "$value" ] && printf "You must enter %s.\n" "$varname"
+                                                  done
+
+                                                    eval "$varname=\$value"
+                                                    }
+
+                                                    # Main script
+                                                    echo "Mad Libs!"
+                                                    echo ""
+                                                    prompt_for_input "Enter a noun: " "noun"
+                                                    prompt_for_input "Enter a verb: " "verb"
+                                                    prompt_for_input "Enter an adjective: " "adjective"
+                                                    prompt_for_input "Enter an adverb: " "adverb"
+
+                                                    clear
+
+                                                    echo "Mad Libs!"
+                                                    echo ""
+                                                    echo "noun: $noun"
+                                                    echo "verb: $verb"
+                                                    echo "adjective: $adjective"
+                                                    echo "adverb: $adverb"
+                                                    echo ""
+                                                    echo "Do you $verb your $adjective $noun $adverb? That's hilarious!"
+
