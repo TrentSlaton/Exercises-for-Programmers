@@ -90,6 +90,7 @@ update msg model =
             { updatedModel | subtotal = st, tax = tx, total = t }
 
 
+calculateTotal : Model -> Float
 calculateTotal m =
     let
         item1Total =
