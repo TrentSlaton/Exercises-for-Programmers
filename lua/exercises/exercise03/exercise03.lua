@@ -1,0 +1,5 @@
+print("What is the quote?")
+QUOTE = io.read()
+print("Who said it?")
+AUTHOR = io.read()
+print(AUTHOR .. " says, " .. '"' .. QUOTE .. '"')
